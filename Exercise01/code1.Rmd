@@ -1,0 +1,159 @@
+---
+title: "STA5001_Assignment_1_Gao_21118674"
+author: "Huaiji Gao"
+date: "2023-03-19"
+output:
+  html_document:
+    df_print: "kable"
+  always_allow_html: true
+---
+
+# STA5001 - Assignment 1 Question 15
+
+Use the dataset taxi.csv from the LMS folder Data. The dataset was downloaded from the site <https://www.kaggle.com/competitions/nyc-taxi-trip-duration> and has information about taxi trips in New York City. The dataset includes pickup time, geo-coordinates, number of passengers, and several other variables.
+
+Read the data in R and save them as the data frame **taxi_df**. Consider only complete cases.
+
+a.  What is the number of observations and variables in the data frame **taxi_df**? (1 mark)
+
+```{r}
+taxi_df <- read.csv("taxi.csv", header = TRUE)
+str(taxi_df) # check structure of taxi_df
+
+############
+#  ANSWER  #
+############
+# There are 625,134 observations of 9 variables in the data frame.
+```
+
+Compute values and add to the data frame **taxi_df** the variable **dist** with the Euclidean distance between pickup and dropoff locations (use the longitude as the x coordinates and the latitude as the y coordinate).
+
+```{r}
+# use sqrt((x1-x2)^2 + (y1-y2)^2)
+taxi_df$dist <- sqrt((taxi_df$pickup_longitude - taxi_df$dropoff_longitude)^2 + 
+                       (taxi_df$pickup_latitude - taxi_df$dropoff_latitude)^2)
+```
+
+b.  What is the maximum distance between pickup and dropoff locations in this dataset (round and enter the answer with 3 decimal places)? What is the number of trips that have this maximum distance? (1 mark)
+
+```{r}
+max_dist <- max(taxi_df$dist) # check the maximum number
+max_dist_trip_number <- nrow(taxi_df[taxi_df$dist == max_dist, ])
+
+############
+#  ANSWER  #
+############
+# The maximum distance between pickup and dropoff locations in this dataset is 10.385
+# The number of trips that have this maximum distance is 1.
+```
+
+c.  Which first row in the data frame **taxi_df** corresponds to this distance? (0.5 mark)
+
+```{r}
+head(taxi_df[taxi_df$dist == max_dist, ], n = 1) # retrieve the first row.
+
+############
+#  ANSWER  #
+############
+# The first row with the max distance has row index of 512347 and id == id2776665
+```
+
+d.  Use the library lubridate. The date 01/01/2016 can be entered in R by using the command ymd(20160101). Subset the data frame **taxi_df** by selecting trips with pickup_datetime which is smaller or equal to ymd(20160101).
+
+```{r}
+library(lubridate)
+taxi_df_20160101 <- taxi_df[taxi_df$pickup_datetime <= ymd(20160101), ]
+```
+
+What is the minimum distance between pickup and dropoff locations in this subset (round and enter the answer with 3 decimal places)? What is the number of trips in this subset that have this minimum distance? (1 mark)
+
+```{r}
+min_dist_20160101 <- min(taxi_df_20160101$dist)
+min_dist_20160101_trip_number <- nrow(taxi_df[taxi_df$dist == min_dist_20160101, ])
+
+############
+#  ANSWER  #
+############
+# The maximum distance between pickup and dropoff locations in this dataset is 0.000
+# The number of trips that have this maximum distance is 2475.
+```
+
+e.  Subset the data frame **taxi_df** and select trips which pickup longitudes are greater than -74 and pickup latitudes are greater than 41. How many such trips are in the data frame? (0.5 mark)
+
+```{r}
+taxi_df_sub <- taxi_df[taxi_df$pickup_longitude > -74 & taxi_df$pickup_latitude > 41, ]
+nrow(taxi_df_sub)
+
+############
+#  ANSWER  #
+############
+# There are 27 trips satisfying the above conditions in the data frame.
+```
+
+Consider only pickup longitudes and pickup latitudes of the subset trips as the spatial coordinates and create a SpatialPoints object.
+
+```{r}
+library(sp)
+coords_sub <- cbind(taxi_df_sub$pickup_longitude, taxi_df_sub$pickup_latitude)
+llCRS <- CRS("+proj=longlat +ellps=WGS84")
+points_sub <- SpatialPoints(coords_sub, proj4string = llCRS)
+```
+
+f.  What is the minimum pickup longitude coordinate in the bounding box (round and enter the answer with 3 decimal places)? What is the minimum pickup latitude coordinate in the bounding box (round and enter the answer with 3 decimal places)? (1 mark)
+
+```{r}
+bbox(points_sub)
+
+############
+#  ANSWER  #
+############
+# The minimum pickup longitude coordinate in this subset data frame is -73.949
+# The minimum pickup latitude coordinate in this subset data frame is 41.010
+```
+
+g.  Plot pickup locations of the subset trips as 2D points. How many points are far away from the group with the majority of points? (0.5 mark)
+
+```{r}
+plot(points_sub)
+box(lwd = 2)
+
+############
+#  ANSWER  #
+############
+# There are 2 points being far away from the group with the majority of points.
+```
+
+h.
+(i) Scale the variable **dist** in the data frame **taxi_df** by multiplying it by 20. Save it with the same name **dist**. Create a SpatialPointsDataFrame object using proj4string CRS("+proj=longlat +ellps=WGS84"), the pickup locations and the updated data frame **taxi_df.**
+
+```{r}
+taxi_df$dist <- taxi_df$dist * 20
+# change taxi_df into a spdf object
+coordinates(taxi_df) <- ~ pickup_longitude + pickup_latitude
+proj4string(taxi_df) <- CRS("+proj=longlat +ellps=WGS84")
+```
+
+Produce spplot of the first 100 trips for the variables "vendor_id", "passenger_count", and "dist".
+```{r}
+spplot(taxi_df[1:100, ], c("vendor_id", "passenger_count","dist"))
+```
+
+For the first interval (range of smallest values) in the plot legend, what are its (round and enter the answer with 3 decimal places) lower and upper bounds? (1 mark) 
+```{r}
+############
+#  ANSWER  #
+############
+# The lower bound is 0.065, and the upper bound is 1.252
+```
+(ii) Convert the SpatialPointsDataFrame object into an sf object and use the mapview command to plot the locations of the first 100 trips on the New York map. Use the option cex = "dist". In the obtained plot how many locations are shown at the bottom right part of the plot (close to Valley Stream)? (0.5 mark)
+```{r}
+library(sf)
+library(mapview)
+sf_20 <- st_as_sf(taxi_df[1:100, ])
+mapview(sf_20, col.regions = "red", cex = "dist", fgb = FALSE)
+
+############
+#  ANSWER  #
+############
+# There are 3 locations shown at the bottom right part of the plot.
+```
