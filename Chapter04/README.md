@@ -67,3 +67,7 @@ Suppose that X and Y are random variables, and a and b are numbers. Then:
 - We use the notation $\lbrace X_t(\omega): t\in T\rbrace$ (for simplicity, $X_t$) to denote a time series, where T (usually $\mathbb{N}$, $\mathbb{Z}$ or $\mathbb{R}$) is the index set.
 
 *Note: Time series models are used to describe the behavior of a sequence of random variables over time, where the observations are typically dependent on past observations. This dependence is often referred to as "serial correlation" or "autocorrelation."*
+
+|<img width="1024" alt="image" src="https://user-images.githubusercontent.com/19381768/229432904-6db84c2e-69ba-4dd1-ad51-391b1d3e0eaa.png">|
+|:--:|
+|Time series|
