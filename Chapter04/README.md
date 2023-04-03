@@ -124,6 +124,10 @@ We will use the same notation $X_t$ for random fields as for time series. But yo
 
 Random fields are used to model and analyze data that varies over multiple dimensions, such as spatial data, images, or signals. They are also used in physics, engineering, and other fields to model stochastic processes in space and time.
 
+|![image](https://user-images.githubusercontent.com/19381768/229489696-73b90b9e-e595-4247-aff9-9a7a496afb5a.png)|
+|:--:|
+|Random field|
+
 Examples of random fields include:
 
 - A temperature map of the earth's surface, where the temperature at each point is a random variable.
