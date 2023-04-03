@@ -50,3 +50,14 @@ $$ Var(X) = E[(X-E(X))^2] $$
 $$ \sigma(X) = \sqrt{Var(X)} $$
 
 *Note: The variance measures how spread out the distribution of X is, while the standard deviation provides a measure of the scale or typical size of the distribution.*
+
+### Properties of $E(X)$ and $Var(X)$
+
+Suppose that X and Y are random variables, and a and b are numbers. Then:
+
+- $E(a) = a$
+- $E(bX) = bE(X)$
+- $E(X + Y) = E(X) + E(Y)$
+- $Var(aX + b) = a^2Var(X)$
+
+*Note: The expected value is a linear operator, meaning that it satisfies the properties of linearity. That is, it behaves like a linear function of its arguments. The variance of a linear transformation of X is equal to the square of the scaling factor times the variance of X.*
