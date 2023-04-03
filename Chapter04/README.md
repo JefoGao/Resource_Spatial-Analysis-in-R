@@ -156,7 +156,7 @@ whereas the variance is:
 
 The (auto-)correlation function of a random field is defined as:
 
-$$ρ(t, s) = Corr[X_t, X_s] = \frac{C(t, s)}{(σ(t)σ(s))}$$
+$$ρ(t, s) = Corr[X_t, X_s] = \frac{C(t, s)}{σ(t)σ(s)}$$
 
 The covariance/correlation function describes the spatial or temporal dependencies between observations at different locations or time points. 
 
