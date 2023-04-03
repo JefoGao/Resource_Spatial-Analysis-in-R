@@ -71,3 +71,13 @@ Suppose that X and Y are random variables, and a and b are numbers. Then:
 |<img width="1024" alt="image" src="https://user-images.githubusercontent.com/19381768/229432904-6db84c2e-69ba-4dd1-ad51-391b1d3e0eaa.png">|
 |:--:|
 |Time series|
+
+### Interpolation and Extrapolation in Time Series Analysis
+
+Time series data is different from other data types in terms of interpolation and extrapolation because we are typically interested in predicting values that are outside the range of the observed data, which is known as extrapolation. 
+
+- In contrast, other data types often involve interpolation, where the goal is to estimate missing values within the observed range of the data. 
+- Interpolation is commonly used, for example, to estimate missing data points in images or to smooth out noisy signals.
+
+- Because time series data is typically used for forecasting and prediction, it is important to be aware of the limitations of extrapolation and to use appropriate statistical methods that take these limitations into account. 
+- In particular, it is important to be aware of issues such as overfitting and model selection bias when making predictions based on time series data.
