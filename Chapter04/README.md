@@ -139,3 +139,25 @@ In the example of a temperature map of the earth's surface, the variable $t$ mig
 Overall, random fields can be used to estimate the spatial or temporal dependence of the data, to detect patterns or anomalies, or to make predictions about future values of the data. They can also be used to generate realistic simulations of the data, which can be useful for testing models or evaluating algorithms.
 
 In practice, the analysis and modeling of random fields often involves the use of advanced statistical methods, such as spatial statistics, spectral analysis, or machine learning techniques.
+
+### Expectation and Covariance of Random Fields
+
+The expectation of a random field is defined as:
+
+$$m(t) = E[X_t]$$
+
+The (auto-)covariance function is defined by:
+
+$$C(t, s) = Cov[X_t, X_s] = E[X_tX_s] - m(t)m(s),$$
+
+whereas the variance is:
+
+σ^2(t) = C(t, t).
+
+The (auto-)correlation function of a random field is defined as:
+
+$$ρ(t, s) = Corr[X_t, X_s] = \frac{C(t, s)}{(σ(t)σ(s))}$$
+
+The covariance/correlation function describes the spatial or temporal dependencies between observations at different locations or time points. 
+
+*Note that the expectation, covariance, and correlation of a random field can be estimated from a finite set of observations using standard statistical methods. These estimates can be used to model and analyze the behavior of the random field, and to make predictions or inferences about future or unobserved values of the field.*
