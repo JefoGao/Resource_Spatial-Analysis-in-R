@@ -180,6 +180,21 @@ The autocovariance and autocorrelation functions are important tools for analyzi
 
 To fit a trend function to the data, one needs to estimate the unknown values of the parameters. This can be done using standard regression techniques, such as ordinary least squares (OLS) or maximum likelihood estimation (ML).
 
-Selecting an appropriate covariance function is a more challenging problem. Not every function can be used as a covariance function, as it must satisfy certain mathematical properties, such as being positive definite. In practice, a common approach is to choose a covariance function from a class of known functions that have desirable properties, such as being stationary or isotropic. Some popular covariance functions include the Gaussian, exponential, and Matérn functions.
+- Selecting an appropriate covariance function is a more challenging problem. 
+- Not every function can be used as a covariance function, as it must satisfy certain mathematical properties, such as being positive definite. 
+- In practice, a common approach is to choose a covariance function from a class of known functions that have desirable properties, such as being stationary or isotropic. 
+- Some popular covariance functions include the Gaussian, exponential, and Matérn functions.
 
 Estimating the parameters of the covariance function from data can be done using maximum likelihood estimation or other methods. Once the parameters are estimated, the covariance function can be used to model and simulate the behavior of the random field, and to make predictions or inferences about future or unobserved values of the field.
+
+### 4.3.4 Positive Definite Functions
+
+A function $f(x_1, x_2, ..., x_n)$ is said to be positive definite if it satisfies the following conditions:
+
+1. $f(x_1, x_2, ..., x_n) = f(x_1 - y_1, x_2 - y_2, ..., x_n - y_n)$ for all $x_1, x_2, ..., x_n$ and $y_1, y_2, ..., y_n$.
+
+2. The matrix $A = [f(x_i, x_j)]_{n×n}$ is positive semidefinite, i.e., for any vector $a = (a_1, a_2, ..., a_n)$ of length $n$, the quadratic form $a^T A a ≥ 0$.
+
+Intuitively, a positive definite function is a function that assigns a positive value to any set of inputs, and that satisfies certain mathematical properties that ensure it behaves well in certain contexts, such as when used as a covariance function.
+
+In the context of random fields, the covariance function must be positive definite to ensure that the resulting covariance matrix is positive semidefinite, which is a necessary condition for the model to be valid and well-behaved. Many popular covariance functions, such as the Gaussian and Matérn functions, are positive definite and have desirable mathematical properties that make them suitable for modeling spatial or temporal dependence in data.
