@@ -80,3 +80,19 @@ Time series data is different from other data types in terms of interpolation an
 - Interpolation is commonly used, for example, to estimate missing data points in images or to smooth out noisy signals.
 - Because time series data is typically used for forecasting and prediction, it is important to be aware of the limitations of extrapolation and to use appropriate statistical methods that take these limitations into account. 
 - In particular, it is important to be aware of issues such as overfitting and model selection bias when making predictions based on time series data.
+
+### Weakly Stationary Time Series
+
+A time series {Xt} is said to be **weakly stationary** if:
+
+- $E(X_t)$ does not depend on $t$.
+- For every integer s, $E[X_t X_{t-s}]$ does not depend on $t$.
+
+For a weakly stationary time series $\lbrace X_t\rbrace$, we define:
+
+- $m = E(X_t)$ (for simplicity, we often use $m = 0$).
+- The **autocovariance function** $γ$ by $γ(s) = E[X_t X_{t-s}]$ for all integer $s$.
+- The **autocorrelation function** $ρ$ by $ρ(s) = \frac{γ(s)}{γ(0)}$ for all integer $s$.
+
+*Note: Weak stationarity is a common assumption in time series analysis. It implies that the mean and variance of the time series are constant over time, and that the autocovariance and autocorrelation functions depend only on the time lag between observations and not on the absolute time at which they occur. Weak stationarity simplifies the analysis of time series and makes it possible to use many powerful tools from classical statistics.*
+
