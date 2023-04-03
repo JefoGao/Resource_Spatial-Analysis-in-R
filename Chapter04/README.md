@@ -29,3 +29,12 @@ $$ E(X) = \sum_{x} x P(X=x) $$
 - Probabilities are given by the relevant area under the probability density function curve.
 
 *Note: Unlike discrete random variables, the probability that a continuous random variable takes on a particular value is zero. Instead, we find probabilities for ranges of values.*
+
+### Expected Value of a Continuous Random Variable $Y$
+
+- Suppose that $Y$ is a continuous random variable.
+- The **expected value** of $Y$, denoted $E(Y)$, is defined mathematically as:
+
+$$ E(Y) = \int_{-\infty}^{\infty} y f(y) dy $$
+
+*Note: The expected value of a continuous random variable is also a measure of the center of the probability distribution. However, it is not the same as the most likely value (mode) of the distribution.*
