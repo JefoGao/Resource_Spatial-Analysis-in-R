@@ -171,3 +171,15 @@ The autocorrelation function $ρ(t, s)$ of a random field is a standardized vers
 The autocorrelation function is calculated by dividing the autocovariance function by the product of the standard deviations of the field at the two locations (or time points), which ensures that the autocorrelation function takes values between -1 and 1. Positive values of the autocorrelation function indicate positive linear dependence, negative values indicate negative linear dependence, and zero values indicate no linear dependence.
 
 The autocovariance and autocorrelation functions are important tools for analyzing and modeling random fields, as they provide information about the spatial or temporal dependence of the data. They can be estimated from a finite set of observations using standard statistical methods, and used to fit models or make predictions about the behavior of the field.
+
+### 4.3.3 Trend and Covariance Functions
+
+- The expectation $m(t)$ of a random field represents a spatial trend in the data, which can be modeled by any function. 
+- In practice, it is common to use a parametric trend function, which can be controlled by a small number of parameters. 
+- Popular trend functions include constant, polynomial, exponential, and logistic functions.
+
+To fit a trend function to the data, one needs to estimate the unknown values of the parameters. This can be done using standard regression techniques, such as ordinary least squares (OLS) or maximum likelihood estimation (ML).
+
+Selecting an appropriate covariance function is a more challenging problem. Not every function can be used as a covariance function, as it must satisfy certain mathematical properties, such as being positive definite. In practice, a common approach is to choose a covariance function from a class of known functions that have desirable properties, such as being stationary or isotropic. Some popular covariance functions include the Gaussian, exponential, and Matérn functions.
+
+Estimating the parameters of the covariance function from data can be done using maximum likelihood estimation or other methods. Once the parameters are estimated, the covariance function can be used to model and simulate the behavior of the random field, and to make predictions or inferences about future or unobserved values of the field.
