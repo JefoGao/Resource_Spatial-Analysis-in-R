@@ -159,3 +159,13 @@ $$ρ(t, s) = Corr[X_t, X_s] = \frac{C(t, s)}{σ(t)σ(s)}$$
 The covariance/correlation function describes the spatial or temporal dependencies between observations at different locations or time points. 
 
 *Note that the expectation, covariance, and correlation of a random field can be estimated from a finite set of observations using standard statistical methods. These estimates can be used to model and analyze the behavior of the random field, and to make predictions or inferences about future or unobserved values of the field.*
+
+The autocovariance function $C(t, s)$ of a random field describes the covariance between the values of the field at two different locations (or time points) $t$ and $s$. 
+
+Intuitively, the autocovariance function measures how similar the values of the field are at different locations (or time points), with positive values indicating positive dependence (i.e., values tend to be similar), negative values indicating negative dependence (i.e., values tend to be dissimilar), and zero values indicating independence (i.e., values are unrelated).
+
+The autocorrelation function $ρ(t, s)$ of a random field is a standardized version of the autocovariance function, and measures the linear relationship between the values of the field at two different locations (or time points). 
+
+The autocorrelation function is calculated by dividing the autocovariance function by the product of the standard deviations of the field at the two locations (or time points), which ensures that the autocorrelation function takes values between -1 and 1. Positive values of the autocorrelation function indicate positive linear dependence, negative values indicate negative linear dependence, and zero values indicate no linear dependence.
+
+The autocovariance and autocorrelation functions are important tools for analyzing and modeling random fields, as they provide information about the spatial or temporal dependence of the data. They can be estimated from a finite set of observations using standard statistical methods, and used to fit models or make predictions about the behavior of the field.
