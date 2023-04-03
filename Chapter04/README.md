@@ -96,7 +96,8 @@ For a weakly stationary time series $\lbrace X_t\rbrace$, we define:
 
 *Note: Weak stationarity is a common assumption in time series analysis. It implies that the mean and variance of the time series are constant over time, and that the autocovariance and autocorrelation functions depend only on the time lag between observations and not on the absolute time at which they occur. Weak stationarity simplifies the analysis of time series and makes it possible to use many powerful tools from classical statistics.*
 
-Intuitively, weak stationarity means that the statistical properties of the time series do not change over time. The mean is constant, and the autocovariance function depends only on the time lag and not on the absolute time at which the observations occur.
+- Intuitively, weak stationarity means that the statistical properties of the time series do not change over time. 
+- The mean is constant, and the autocovariance function depends only on the time lag and not on the absolute time at which the observations occur.
 
 Examples of weakly stationary time series include:
 
