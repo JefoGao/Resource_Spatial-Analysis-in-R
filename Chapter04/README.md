@@ -59,3 +59,9 @@ Suppose that X and Y are random variables, and a and b are numbers. Then:
 - $Var(aX + b) = a^2Var(X)$
 
 *Note: The expected value is a linear operator, meaning that it satisfies the properties of linearity. That is, it behaves like a linear function of its arguments. The variance of a linear transformation of X is equal to the square of the scaling factor times the variance of X.*
+
+# Time Series
+
+- Observations of random variables over time typically display dependence. 
+- It is this dependence that we model by using time series models.
+- We use the notation $\lbrace X_t(\omega): t\in T\rbrace$ (for simplicity, $X_t$) to denote a time series, where T (usually $\mathbb{N}$, $\mathbb{Z}$ or $\mathbb{R}$) is the index set.
