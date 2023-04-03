@@ -110,7 +110,7 @@ Examples of weakly stationary time series include:
 
 ## Random Fields
 
-A **random field** is a collection of random variables indexed by an index taking values in some multidimensional space, on a surface, etc. A time series is a particular case of random fields, where $T$ is a one-dimensional space.
+A **random field** is a generalization of a time series to higher-dimensional spaces or other index sets. It is a collection of random variables indexed by an index set that can take on values in a multidimensional space, on a surface, or in any other domain. A time series is a particular case of random fields, where $T$ is a one-dimensional space.
 
 We will use the same notation $X_t$ for random fields as for time series. But you should remember that the index **t** can be multidimensional. 
 
@@ -119,3 +119,43 @@ We will use the same notation $X_t$ for random fields as for time series. But yo
 - This deterministic function is usually called a sample path (or sample function) or a realization. 
 - This is what we usually observe in our experiments or datasets.
 - For simplicity, we denote $X(t,ω)$ by $X_t$.
+
+*Note: Random fields are used to describe the behavior of a collection of random variables over a multidimensional space or other index set. Random fields generalize the concept of time series to higher-dimensional spaces, making it possible to analyze and model data that varies over multiple dimensions.*
+
+Random fields are used to model and analyze data that varies over multiple dimensions, such as spatial data, images, or signals. They are also used in physics, engineering, and other fields to model stochastic processes in space and time.
+
+|![image](https://user-images.githubusercontent.com/19381768/229489696-73b90b9e-e595-4247-aff9-9a7a496afb5a.png)|
+|:--:|
+|Random field|
+
+Examples of random fields include:
+
+- A temperature map of the earth's surface, where the temperature at each point is a random variable.
+- A three-dimensional image of a material, where the intensity at each point is a random variable.
+- A time-frequency representation of a signal, where the amplitude at each time-frequency point is a random variable.
+
+In the example of a temperature map of the earth's surface, the variable $t$ might represent the two-dimensional location on the surface, and the variable $ω$ might represent the time at which the temperature is observed or recorded. Thus, for a fixed value of $ω$ (i.e., a fixed time), the temperature at each point on the surface can be considered a **realization of a random field**, with each temperature value corresponding to a different value of the index t (i.e., a different location on the surface).
+
+Overall, random fields can be used to estimate the spatial or temporal dependence of the data, to detect patterns or anomalies, or to make predictions about future values of the data. They can also be used to generate realistic simulations of the data, which can be useful for testing models or evaluating algorithms.
+
+In practice, the analysis and modeling of random fields often involves the use of advanced statistical methods, such as spatial statistics, spectral analysis, or machine learning techniques.
+
+### Expectation and Covariance of Random Fields
+
+The expectation of a random field is defined as:
+
+$$m(t) = E[X_t]$$
+
+The (auto-)covariance function is defined by:
+
+$$C(t, s) = Cov[X_t, X_s] = E[X_tX_s] - m(t)m(s),$$
+
+whereas the variance is: $σ^2(t) = C(t, t)$.
+
+The (auto-)correlation function of a random field is defined as:
+
+$$ρ(t, s) = Corr[X_t, X_s] = \frac{C(t, s)}{σ(t)σ(s)}$$
+
+The covariance/correlation function describes the spatial or temporal dependencies between observations at different locations or time points. 
+
+*Note that the expectation, covariance, and correlation of a random field can be estimated from a finite set of observations using standard statistical methods. These estimates can be used to model and analyze the behavior of the random field, and to make predictions or inferences about future or unobserved values of the field.*
