@@ -6,12 +6,12 @@
 - We denote a random variable $X(ω)$ by $X$.
 - If X is a random variable, then we cannot predict its value with certainty, but we can assign probabilities to events such as $\lbrace X = 1 \rbrace$ and $\lbrace X > 2\rbrace $, etc.
 
-### Discrete Random Variables
+### 4.1.1 Discrete Random Variables
 
 - A random variable $X$ is called **discrete** if all of its possible values can be written down in a list.
 - The **probability distribution** of a discrete random variable $X$ is a list of the possible values that $X$ can take (put in increasing order), together with the probabilities that X takes each of these possible values.
 
-### Expected Value of $X$
+### 4.1.2 Expected Value of $X$
 
 - The **expected value** of $X$, denoted as $E(X)$, is defined to be:
 
@@ -20,7 +20,7 @@ $$ E(X) = \sum_{x} x P(X=x) $$
 - This is a weighted average of the possible values of X where the weights are the corresponding probabilities. 
 - $E(X)$ is a measure of the center of the probability distribution.
 
-### Continuous Random Variables
+### 4.1.3 Continuous Random Variables
 
 - A **continuous random variable** is a random variable that can take on a continuum of possible values.
 - We describe the probability properties of a continuous random variable $Y$ by a function $f(y)$ called the **probability density function (pdf)**.
@@ -28,7 +28,7 @@ $$ E(X) = \sum_{x} x P(X=x) $$
 
 *Note: Unlike discrete random variables, the probability that a continuous random variable takes on a particular value is zero. Instead, we find probabilities for ranges of values.*
 
-### Expected Value of a Continuous Random Variable $Y$
+### 4.1.4 Expected Value of a Continuous Random Variable $Y$
 
 - Suppose that $Y$ is a continuous random variable.
 - The **expected value** of $Y$, denoted $E(Y)$, is defined mathematically as:
@@ -37,7 +37,7 @@ $$ E(Y) = \int_{-\infty}^{\infty} y f(y) dy $$
 
 *Note: The expected value of a continuous random variable is also a measure of the center of the probability distribution. However, it is not the same as the most likely value (mode) of the distribution.*
 
-### Variance of $X$
+### 4.1.5 Variance of $X$
 
 - Suppose that $X$ is a random variable. The **variance of $X$**, denoted $Var(X)$, is defined as:
 
@@ -49,7 +49,7 @@ $$ \sigma(X) = \sqrt{Var(X)} $$
 
 *Note: The variance measures how spread out the distribution of X is, while the standard deviation provides a measure of the scale or typical size of the distribution.*
 
-### Properties of $E(X)$ and $Var(X)$
+### 4.1.6 Properties of $E(X)$ and $Var(X)$
 
 Suppose that X and Y are random variables, and a and b are numbers. Then:
 
@@ -60,7 +60,7 @@ Suppose that X and Y are random variables, and a and b are numbers. Then:
 
 *Note: The expected value is a linear operator, meaning that it satisfies the properties of linearity. That is, it behaves like a linear function of its arguments. The variance of a linear transformation of X is equal to the square of the scaling factor times the variance of X.*
 
-# Time Series
+## 4.2 Time Series
 
 - Observations of random variables over time typically display dependence. 
 - It is this dependence that we model by using time series models.
@@ -72,7 +72,7 @@ Suppose that X and Y are random variables, and a and b are numbers. Then:
 |:--:|
 |Time series|
 
-### Interpolation and Extrapolation in Time Series Analysis
+### 4.2.1 Interpolation and Extrapolation in Time Series Analysis
 
 Time series data is different from other data types in terms of interpolation and extrapolation because we are typically interested in predicting values that are outside the range of the observed data, which is known as extrapolation. 
 
@@ -81,7 +81,7 @@ Time series data is different from other data types in terms of interpolation an
 - Because time series data is typically used for forecasting and prediction, it is important to be aware of the limitations of extrapolation and to use appropriate statistical methods that take these limitations into account. 
 - In particular, it is important to be aware of issues such as overfitting and model selection bias when making predictions based on time series data.
 
-### Weakly Stationary Time Series
+### 4.2.2 Weakly Stationary Time Series
 
 A time series $\lbrace X_t\rbrace$ is said to be **weakly stationary** if:
 
@@ -108,7 +108,7 @@ Examples of weakly stationary time series include:
 
 *In practice, weak stationarity is a common assumption in time series analysis. It simplifies the analysis of time series and makes it possible to use many powerful tools from classical statistics, such as the Fourier transform, the autoregressive integrated moving average (ARIMA) model, and spectral analysis.*
 
-## Random Fields
+## 4.3 Random Fields
 
 A **random field** is a generalization of a time series to higher-dimensional spaces or other index sets. It is a collection of random variables indexed by an index set that can take on values in a multidimensional space, on a surface, or in any other domain. A time series is a particular case of random fields, where $T$ is a one-dimensional space.
 
@@ -140,7 +140,7 @@ Overall, random fields can be used to estimate the spatial or temporal dependenc
 
 In practice, the analysis and modeling of random fields often involves the use of advanced statistical methods, such as spatial statistics, spectral analysis, or machine learning techniques.
 
-### Expectation and Covariance of Random Fields
+### 4.3.1 Expectation and Covariance of Random Fields
 
 The expectation of a random field is defined as:
 
@@ -159,6 +159,8 @@ $$ρ(t, s) = Corr[X_t, X_s] = \frac{C(t, s)}{σ(t)σ(s)}$$
 The covariance/correlation function describes the spatial or temporal dependencies between observations at different locations or time points. 
 
 *Note that the expectation, covariance, and correlation of a random field can be estimated from a finite set of observations using standard statistical methods. These estimates can be used to model and analyze the behavior of the random field, and to make predictions or inferences about future or unobserved values of the field.*
+
+### 4.3.2 Autocovariance and Autocorrelation Functions
 
 The autocovariance function $C(t, s)$ of a random field describes the covariance between the values of the field at two different locations (or time points) $t$ and $s$. 
 
