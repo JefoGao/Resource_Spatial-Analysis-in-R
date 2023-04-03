@@ -107,3 +107,15 @@ Examples of weakly stationary time series include:
 - Autoregressive: a time series where the value at each time point depends linearly on the past values of the series. Autoregressive processes can be weakly stationary if the coefficients satisfy certain conditions.
 
 *In practice, weak stationarity is a common assumption in time series analysis. It simplifies the analysis of time series and makes it possible to use many powerful tools from classical statistics, such as the Fourier transform, the autoregressive integrated moving average (ARIMA) model, and spectral analysis.*
+
+## Random Fields
+
+A **random field** is a collection of random variables indexed by an index taking values in some multidimensional space, on a surface, etc. A time series is a particular case of random fields, where $T$ is a one-dimensional space.
+
+- We will use the same notation $X_t$ for random fields as for time series. 
+- But you should remember that the index **t** can be multidimensional. 
+- However, because of randomness, $X_t$ is a function of two variables, i.e. $X_t = X(t,ω)$. 
+- For a fixed ω∈Ω, the function $X(t,ω)$ is a non-random function of **t**. 
+- This deterministic function is usually called a sample path (or sample function) or a realization. 
+- This is what we usually observe in our experiments or datasets.
+- For simplicity, we denote $X(t,ω)$ by $X_t$.
