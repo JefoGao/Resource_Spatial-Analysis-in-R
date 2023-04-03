@@ -198,3 +198,22 @@ A function $f(x_1, x_2, ..., x_n)$ is said to be positive definite if it satisfi
 Intuitively, a positive definite function is a function that assigns a positive value to any set of inputs, and that satisfies certain mathematical properties that ensure it behaves well in certain contexts, such as when used as a covariance function.
 
 In the context of random fields, the covariance function must be positive definite to ensure that the resulting covariance matrix is positive semidefinite, which is a necessary condition for the model to be valid and well-behaved. Many popular covariance functions, such as the Gaussian and Matérn functions, are positive definite and have desirable mathematical properties that make them suitable for modeling spatial or temporal dependence in data.
+
+### 4.3.5 Positive Definite Functions Definition and Properties
+
+A function of two variables $B(·, ·)$ is positive definite if it satisfies the following condition:
+
+$$ \sum_{k=1}^n \sum_{l=1}^n c_k \bar{c}_l B(t_k , t_l ) ≥ 0 $$
+
+for any positive integer $n$, sequences $t_k ∈ T$ and complex numbers $c_k \in \mathbb{C}$.
+
+Positive definite functions have several useful properties, including:
+
+- They are symmetric, i.e., $B(t, s) = B(s, t)$ for all $t$, $s$ in $T$.
+- They are continuous and bounded.
+- They are closed under linear combinations.
+- They are closed under multiplication by positive constants.
+- They can be used to construct new covariance functions from known ones using standard operations such as addition, multiplication, and convolution.
+
+The concept of positive definiteness is fundamental in many areas of statistics, data science, and mathematics, and plays a central role in the theory and practice of random fields and related topics.
+
