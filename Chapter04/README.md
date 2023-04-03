@@ -119,3 +119,5 @@ We will use the same notation $X_t$ for random fields as for time series. But yo
 - This deterministic function is usually called a sample path (or sample function) or a realization. 
 - This is what we usually observe in our experiments or datasets.
 - For simplicity, we denote $X(t,ω)$ by $X_t$.
+
+*Note: Random fields are used to describe the behavior of a collection of random variables over a multidimensional space or other index set. Random fields generalize the concept of time series to higher-dimensional spaces, making it possible to analyze and model data that varies over multiple dimensions.*
