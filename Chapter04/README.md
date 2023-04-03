@@ -83,7 +83,7 @@ Time series data is different from other data types in terms of interpolation an
 
 ### Weakly Stationary Time Series
 
-A time series {Xt} is said to be **weakly stationary** if:
+A time series $\lbrace X_t\rbrace$ is said to be **weakly stationary** if:
 
 - $E(X_t)$ does not depend on $t$.
 - For every integer s, $E[X_t X_{t-s}]$ does not depend on $t$.
