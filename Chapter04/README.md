@@ -205,7 +205,8 @@ A function of two variables $B(·, ·)$ is positive definite if it satisfies the
 
 $$ \sum_{k=1}^n \sum_{l=1}^n c_k \bar{c}_l B(t_k , t_l ) ≥ 0 $$
 
-for any positive integer $n$, sequences $t_k ∈ T$ and complex numbers $c_k \in \mathbb{C}$.
+for any positive integer $n$, sequences $t_k ∈ T$ and complex numbers $c_k \in \mathbb{C}$. ($\bar{c}_k$ denotes a
+complex conjugate of $c_k$).
 
 Positive definite functions have several useful properties, including:
 
@@ -215,5 +216,13 @@ Positive definite functions have several useful properties, including:
 - They are closed under multiplication by positive constants.
 - They can be used to construct new covariance functions from known ones using standard operations such as addition, multiplication, and convolution.
 
+Let $P_T$ be the class of positive functions on $T$.
+1. $B(t, s) ∈ P_T , α ≥ 0 ⇒ α · B(t, s) ∈ P_T $
+2. $B_1(t, s) ∈ P_T , B_2(t, s) ∈ P_T ⇒ B_1(t, s) + B_2(t, s) ∈ P_T$
+3. $α_1 ≥ 0, ..., α_n ≥ 0$; $B_1(t, s), ..., B_n(t, s) ∈ P_T ⇒ \sum_{k=1}^n α_kB_k (t, s) ∈ P_T$
+4. $B_1(t, s) ∈ P_T, B_2(t, s) ∈ P_T ⇒ B_1(t, s) · B_2(t, s) ∈ P_T$
+5. $B_n(t, s) ∈ P_T ⇒ lim_{n→∞} B_n(t, s) ∈ P_T$
+
 The concept of positive definiteness is fundamental in many areas of statistics, data science, and mathematics, and plays a central role in the theory and practice of random fields and related topics.
+
 
