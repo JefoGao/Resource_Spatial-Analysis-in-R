@@ -38,3 +38,15 @@ $$ E(X) = \sum_{x} x P(X=x) $$
 $$ E(Y) = \int_{-\infty}^{\infty} y f(y) dy $$
 
 *Note: The expected value of a continuous random variable is also a measure of the center of the probability distribution. However, it is not the same as the most likely value (mode) of the distribution.*
+
+### Variance of $X$
+
+- Suppose that $X$ is a random variable. The **variance of $X$**, denoted $Var(X)$, is defined as:
+
+$$ Var(X) = E[(X-E(X))^2] $$
+
+- The **standard deviation** is defined to be the square root of the variance:
+
+$$ \sigma(X) = \sqrt{Var(X)} $$
+
+*Note: The variance measures how spread out the distribution of X is, while the standard deviation provides a measure of the scale or typical size of the distribution.*
