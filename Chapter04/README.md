@@ -65,3 +65,5 @@ Suppose that X and Y are random variables, and a and b are numbers. Then:
 - Observations of random variables over time typically display dependence. 
 - It is this dependence that we model by using time series models.
 - We use the notation $\lbrace X_t(\omega): t\in T\rbrace$ (for simplicity, $X_t$) to denote a time series, where T (usually $\mathbb{N}$, $\mathbb{Z}$ or $\mathbb{R}$) is the index set.
+
+*Note: Time series models are used to describe the behavior of a sequence of random variables over time, where the observations are typically dependent on past observations. This dependence is often referred to as "serial correlation" or "autocorrelation."*
