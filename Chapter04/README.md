@@ -2,8 +2,6 @@
 
 ## 4.1 Random Variables
 
-### Random Variables
-
 - A **random variable** is a variable that takes a numerical value for each possible outcome of a statistical experiment. 
 - We denote a random variable $X(ω)$ by $X$.
 - If X is a random variable, then we cannot predict its value with certainty, but we can assign probabilities to events such as $\lbrace X = 1 \rbrace$ and $\lbrace X > 2\rbrace $, etc.
