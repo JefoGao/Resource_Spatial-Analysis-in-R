@@ -150,9 +150,7 @@ The (auto-)covariance function is defined by:
 
 $$C(t, s) = Cov[X_t, X_s] = E[X_tX_s] - m(t)m(s),$$
 
-whereas the variance is:
-
-σ^2(t) = C(t, t).
+whereas the variance is: $σ^2(t) = C(t, t)$.
 
 The (auto-)correlation function of a random field is defined as:
 
