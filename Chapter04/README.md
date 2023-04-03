@@ -86,7 +86,7 @@ Time series data is different from other data types in terms of interpolation an
 A time series $\lbrace X_t\rbrace$ is said to be **weakly stationary** if:
 
 - $E(X_t)$ does not depend on $t$.
-- For every integer s, $E[X_t X_{t-s}]$ does not depend on $t$.
+- For every integer s, $E[X_t X_{t-s}]$ does not depend on $t$. Or in other words, the autocovariance function $γ(s) = E[(X_t - E(X_t))(X_{t-s} - E(X_{t-s}))]$ does not depend on $t$ for any lag $s$.
 
 For a weakly stationary time series $\lbrace X_t\rbrace$, we define:
 
@@ -96,3 +96,13 @@ For a weakly stationary time series $\lbrace X_t\rbrace$, we define:
 
 *Note: Weak stationarity is a common assumption in time series analysis. It implies that the mean and variance of the time series are constant over time, and that the autocovariance and autocorrelation functions depend only on the time lag between observations and not on the absolute time at which they occur. Weak stationarity simplifies the analysis of time series and makes it possible to use many powerful tools from classical statistics.*
 
+Intuitively, weak stationarity means that the statistical properties of the time series do not change over time. The mean is constant, and the autocovariance function depends only on the time lag and not on the absolute time at which the observations occur.
+
+Examples of weakly stationary time series include:
+
+- White noise: a time series of independent and identically distributed (iid) random variables with mean zero and constant variance.
+- Random walk: a time series where the value at each time point is the sum of the previous value and a random increment. Random walks are not weakly stationary because the mean and variance change over time.
+- Moving average: a time series that is constructed by taking a weighted average of past and present random shocks. Moving average processes can be weakly stationary if the weights satisfy certain conditions.
+- Autoregressive: a time series where the value at each time point depends linearly on the past values of the series. Autoregressive processes can be weakly stationary if the coefficients satisfy certain conditions.
+
+*In practice, weak stationarity is a common assumption in time series analysis. It simplifies the analysis of time series and makes it possible to use many powerful tools from classical statistics, such as the Fourier transform, the autoregressive integrated moving average (ARIMA) model, and spectral analysis.*
